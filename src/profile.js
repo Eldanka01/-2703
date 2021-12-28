@@ -57,8 +57,9 @@ button.addEventListener('click', e=>{
     localStorage.setItem(name, pass.value)
     localStorage.setItem('current-password', pass.value)
     alert('вы изменили пароль, будьте бдительны!')
-    location.reload();
     localStorage.removeItem('forget-password')
+    location.reload();
+    
 })
 
 
