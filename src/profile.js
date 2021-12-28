@@ -3,8 +3,15 @@ let button = document.querySelector(".btn-login");
 let $user = document.querySelector('.user')
 let re = /.{8,}/
 login.textContent = name;
-if(!localStorage.getItem(name)){
+if(!localStorage.getItem(name) && !localStorage.getItem('forget-password')){
     localStorage.setItem(name, localStorage.getItem('current-password'))
+}
+
+if(localStorage.getItem('forget-password')){
+    oldpass.style.display = 'none'
+    // forgetpass.click();
+    pass.disabled = false;
+    pass.select();
 }
 
 
@@ -51,6 +58,7 @@ button.addEventListener('click', e=>{
     localStorage.setItem('current-password', pass.value)
     alert('вы изменили пароль, будьте бдительны!')
     location.reload();
+    localStorage.removeItem('forget-password')
 })
 
 
@@ -62,5 +70,6 @@ forgetpass.addEventListener('click', e=>{
         localStorage.setItem(name, '')
         oldpass.style.display = 'none'
         pass.disabled = false;
+        // localStorage.removeItem('forget-password')
     }
 })

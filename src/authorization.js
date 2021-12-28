@@ -1,6 +1,7 @@
 let form = document.forms.form;
-
-
+let rem = document.querySelector('.rem')
+// let name = localStorage.getItem('current-user')
+// console.log(localStorage.getItem('current-user'))
 form.addEventListener("submit", (e) => {
     e.preventDefault();
     let name = form.name.value;
@@ -11,32 +12,22 @@ form.addEventListener("submit", (e) => {
     }else{
         alert('Неверный логин или пароль')
     }
-    // if(check.length == 3){
-    //   let name = form.name.value
-    //   let password = form.password.value
-    //   localStorage.setItem(name, password)
-    //   localStorage.setItem('current-user', name)
-    //   alert('Вы успешно зарегистрировались!')
-    //   setTimeout(e=>location.href = 'index.html', 1500)
-      
-    // } else alert('Заполните все анкетнные данные')
-    
   });
-  
-//   window.addEventListener('input', e=>{
-//     if(e.target.classList.contains('reg')){
-//       switch(e.target.name){
-//         case 'name' : 
-           
-//           break;
-//         case 'password' :
-          
-//           break;
-//         // case 'password2' :
-//         //   e.target.classList[e.target.value === form.password.value? 'add':'remove']('succ')
-//         //   e.target.parentNode.querySelector('.required').classList[e.target.value == form.password.value? 'remove':'add']('hidden');
-//         //   break;
-//       }
-//     }
-//   })
-  
+
+rem.addEventListener('click', e=>{
+    e.preventDefault();
+    let x = prompt('Введите ваш логин для сброса пароля')
+    localStorage.setItem('current-password', localStorage.getItem(name))
+    console.log(localStorage.getItem('current-password'))
+    if(localStorage.getItem(x)){
+        alert('Вы сбросили пароль, пожалуйста введите новый пароль иначе старый пароль вернеться после перезагрузки страницы')
+        localStorage.setItem(name, '')
+        localStorage.setItem('current-user', x)
+        localStorage.setItem('forget-password', true)
+        // oldpass.style.display = 'none'
+        // pass.disabled = false;
+        window.location.href = 'profile.html'
+    }
+
+})
+
