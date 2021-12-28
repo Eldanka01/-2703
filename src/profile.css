@@ -120,3 +120,23 @@ label.newpass:before{
 label.repeatpass:before{
     content:'повторить пароль';
 } */
+
+.orReg{
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color:grey;
+    /* text-decoration:dashed; */
+  }
+  .rem{
+    text-align: center;
+    display: block;
+    margin-top: 5px;
+    /* text-decoration:dashed; */
+    color:grey;
+    /* border-bottom:1px dashed red; */
+  }
+  
+  a:hover{
+    color:#506FBB;
+  }
