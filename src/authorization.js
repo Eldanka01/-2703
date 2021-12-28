@@ -20,7 +20,7 @@ rem.addEventListener('click', e=>{
     localStorage.setItem('current-password', localStorage.getItem(name))
     console.log(localStorage.getItem('current-password'))
     if(localStorage.getItem(x)){
-        alert('Вы сбросили пароль, пожалуйста введите новый пароль иначе старый пароль вернеться после перезагрузки страницы')
+        alert('Вы сбросили пароль, пожалуйста, введите новый пароль, иначе старый пароль вернется после перезагрузки страницы!')
         localStorage.setItem(name, '')
         localStorage.setItem('current-user', x)
         localStorage.setItem('forget-password', true)
