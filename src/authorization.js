@@ -24,8 +24,6 @@ rem.addEventListener('click', e=>{
         localStorage.setItem(name, '')
         localStorage.setItem('current-user', x)
         localStorage.setItem('forget-password', true)
-        // oldpass.style.display = 'none'
-        // pass.disabled = false;
         window.location.href = 'profile.html'
     }
 
